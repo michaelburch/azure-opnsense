@@ -26,6 +26,10 @@ cd ..
 ln -sf /usr/local/bin/python3.9 /usr/local/bin/python
 sed -i "" 's/ResourceDisk.EnableSwap=y/ResourceDisk.EnableSwap=n/' /etc/waagent.conf
 
+# Attempt to expand rootfs
+gpart recover da0 || true
+gpart resize -i 3 da0 || true
+
 # Schedule Reboot
 shutdown -r +1
 exit 0
