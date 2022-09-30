@@ -7,7 +7,7 @@ AZURE_AGENT_VERSION="2.8.0.11"
 BOOTSTRAP_URI="${1:-https://raw.githubusercontent.com/opnsense/update/$OPNSENSE_VERSION/src/bootstrap/opnsense-bootstrap.sh.in}"
 CONFIG_URI="${2:-https://raw.githubusercontent.com/michaelburch/azure-opnsense/main/config/$OPNSENSE_VERSION-generic.xml}" 
 echo "Retrieving $CONFIG_URI"
-fetch $CONFIG_URI -f /usr/local/etc/config.xml
+fetch $CONFIG_URI -o /usr/local/etc/config.xml
 
 echo "Retrieving $BOOTSTRAP_URI"
 fetch $BOOTSTRAP_URI
