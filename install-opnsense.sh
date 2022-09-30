@@ -26,5 +26,6 @@ cd ..
 ln -sf /usr/local/bin/python3.9 /usr/local/bin/python
 sed -i "" 's/ResourceDisk.EnableSwap=y/ResourceDisk.EnableSwap=n/' /etc/waagent.conf
 
-# Reboot
-reboot
+# Schedule Reboot
+shutdown -r +1
+exit 0
