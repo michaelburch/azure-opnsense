@@ -25,6 +25,7 @@ python3 setup.py install --register-service --lnx-distro=freebsd --force
 cd ..
 ln -sf /usr/local/bin/python3.9 /usr/local/bin/python
 sed -i "" 's/ResourceDisk.EnableSwap=y/ResourceDisk.EnableSwap=n/' /etc/waagent.conf
+pkg install -y bash
 
 # Attempt to expand rootfs
 gpart recover da0 || true
